@@ -3,6 +3,8 @@ import { IonicPage, NavController, NavParams, LoadingController } from 'ionic-an
 import { HttpClient } from '@angular/common/http';
 import { HomePage } from "../home/home";
 import { ToastController } from 'ionic-angular';
+import { APIConstant } from "../../constant/constant";
+
 
 /**
  * Generated class for the LoginPage page.
@@ -32,7 +34,8 @@ export class LoginPage {
     content: ''
   });
   loading.present();
-    this.http.post('https://eperformance.beacox.space:8080/MFeedback-New/mfb/feedbacklogin', value)
+
+    this.http.post(APIConstant.serviceUrl+APIConstant.loginUrl, value)
       .subscribe(
         res => {
           loading.dismiss();
