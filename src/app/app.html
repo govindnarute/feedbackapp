@@ -1,0 +1,45 @@
+<ion-menu [content]="content" persistent="true">
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>
+        MB-FEEDBACK
+        
+      </ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content>
+    <ion-list>
+      <ion-item-divider color="light">Performance</ion-item-divider>
+      <button ion-item (click)="openPage('Home')">
+         <ion-icon name="chatbubbles" item-start></ion-icon>
+        Feedback
+      </button>
+      <button ion-item (click)="openPage('List')">
+         <ion-icon name="paper" item-start></ion-icon>
+        Code Quality
+      </button>
+       <ion-item-divider color="light">Company Setting</ion-item-divider>
+        
+       
+       <button ion-item >
+         <ion-icon name="people" item-start></ion-icon>
+        Manage Employees
+      </button>
+        
+       <button ion-item >
+          <ion-icon name="pricetags" item-start></ion-icon>
+        Manage Categories
+      </button>
+      <button ion-item >
+         <ion-icon name="logo-whatsapp" item-start></ion-icon>
+        Bot Settings
+      </button>
+     
+    </ion-list>
+  </ion-content>
+
+</ion-menu>
+
+<!-- Disable swipe-to-go-back because it's poor UX to combine STGB with side menus -->
+<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>
