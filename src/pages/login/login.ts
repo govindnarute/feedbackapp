@@ -4,6 +4,8 @@ import { HttpClient } from '@angular/common/http';
 import { HomePage } from "../home/home";
 import { ToastController } from 'ionic-angular';
 import { APIConstant } from "../../constant/constant";
+import { Storage } from '@ionic/storage';
+
 
 
 /**
@@ -22,7 +24,7 @@ export class LoginPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams,
   public http: HttpClient,public loadingCtrl: LoadingController,
-  public toastCtrl: ToastController) {
+  public toastCtrl: ToastController,private storage: Storage) {
   }
 
   ionViewDidLoad() {
@@ -40,7 +42,10 @@ export class LoginPage {
         res => {
           loading.dismiss();
           console.log(res);
-           
+           this.storage.set('userDetails', res);
+           this.storage.get('userDetails').then(data=>{
+             console.log(data.object.authToken)
+           })
           this.navCtrl.push(HomePage);
         },
         err => {

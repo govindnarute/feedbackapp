@@ -7,8 +7,67 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-  
+<ion-content>
+ 
+<!--       
+        <ion-grid>
+<ion-row nowrap   >
+  <ion-col col-1>#</ion-col>
+  <ion-col col-3>From</ion-col>
+  <ion-col col-3>To</ion-col>
+  <ion-col col-3>Feedback</ion-col>
+  <ion-col col-3>Category</ion-col>
+  <ion-col col-3>type</ion-col>
+  <ion-col col-3>Date</ion-col>
+  <ion-col col-4 >Action</ion-col>
 
-  <button ion-button secondary menuToggle>Toggle Menu</button>
+</ion-row>
+</ion-grid>
+ <ion-scroll   scrollX="true" scrollY="true" style="height:100%" >
+<ion-grid>
+<ion-row class="table-bg" nowrap    *ngFor="let i of feedBackResult;let j=index">
+  <ion-col col-1>{{j+1}}</ion-col>
+  <ion-col col-3>{{i.fromUserName}}</ion-col>
+  <ion-col col-3>{{i.toName}}</ion-col>
+  <ion-col col-4>{{i.feedbackText}}</ion-col>
+  <ion-col col-3>{{i.categoryName}}</ion-col>
+  <ion-col col-3>{{i.type}}</ion-col>
+  <ion-col col-3>{{i.feedbackTime |date}}</ion-col>
+  <ion-col col-4>
+      <button ion-button><ion-icon name="trash"></ion-icon></button>  
+      <button ion-button><ion-icon name="trash"></ion-icon></button>  
+     
+
+  </ion-col>
+
+</ion-row>
+</ion-grid>
+      -->
+        <!--</ion-scroll>-->
+        <ion-scroll   scrollX="true" scrollY="true" style="height:100%" >
+ 
+<table>
+  <tr nowrap >
+<th col-3>#</th>
+<th col-3>From</th>
+<th col-3>To</th>
+<th col-3 style="width:30%">Feedback</th>
+<th col-3>Action</th>
+</tr>
+ 
+<tr *ngFor="let i of feedBackResult;let j=index" nowrap>
+  <td col-3>{{j+1}}</td>
+  <td style="width:20%">{{i.fromUserName}}</td>
+  <td col-3>{{i.toName}}</td>
+  <td col-3 style="width:30%" (click)="openFeedbackDetails(i)">{{i.feedbackText}}</td>
+  <td col-3><button ion-button><ion-icon name="trash"></ion-icon></button>  
+      <button ion-button><ion-icon name="trash"></ion-icon></button>  </td>
+
+
+</tr>
+
+</table>
+
+</ion-scroll>
+ 
 </ion-content>
