@@ -12,6 +12,8 @@ import { LoginPage } from "../pages/login/login";
 import { HttpClientModule } from '@angular/common/http';
 import { IonicStorageModule } from '@ionic/storage';
 import { FeedbackDetailsPage } from "../pages/feedback-details/feedback-details";
+import {PopupModule} from 'ng2-opd-popup';
+import { FeedbackFilterPage } from "../pages/feedback-filter/feedback-filter";
 
 @NgModule({
   declarations: [
@@ -19,13 +21,15 @@ import { FeedbackDetailsPage } from "../pages/feedback-details/feedback-details"
     HomePage,
     ListPage,
     LoginPage,
-    FeedbackDetailsPage
+    FeedbackDetailsPage,
+    FeedbackFilterPage
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     IonicModule.forRoot(MyApp),
-    IonicStorageModule.forRoot()
+    IonicStorageModule.forRoot(),
+     PopupModule.forRoot()
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -33,7 +37,8 @@ import { FeedbackDetailsPage } from "../pages/feedback-details/feedback-details"
     HomePage,
     ListPage,
     LoginPage,
-    FeedbackDetailsPage
+    FeedbackDetailsPage,
+    FeedbackFilterPage
   ],
   providers: [
     StatusBar,

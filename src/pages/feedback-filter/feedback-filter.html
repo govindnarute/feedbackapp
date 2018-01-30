@@ -1,0 +1,67 @@
+<!--
+  Generated template for the FeedbackFilterPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title> Filters
+      <button ion-button float-right> SAVE</button>
+      <!--<ion-icon name="close" (click)="closeMe()" float-right></ion-icon>-->
+    </ion-title>
+  </ion-navbar>
+
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-scroll   scrollX="true" scrollY="true" style="height:20%" >
+<ion-list>
+  <button ion-item (click)="isToUserNameClick()" >
+    To User Name
+    <ion-icon color="success" item-right [name]="toUserName ? 'arrow-dropdown' : 'arrow-dropright'"></ion-icon>
+    </button>
+    <div *ngIf="toUserName">
+     
+    <ion-input type="text" value="" placeholder=" To User Name"></ion-input>
+
+    </div>
+</ion-list>
+<ion-item-divider color="light">OR</ion-item-divider>
+<ion-list>
+  <button ion-item (click)="isFromUserNameClick()" >
+    From User Name
+    <ion-icon color="success" item-right [name]="fromUserName ? 'arrow-dropdown' : 'arrow-dropright'"></ion-icon>
+    </button>
+    <div *ngIf="fromUserName">
+     <ion-item>
+    <ion-input type="text" value="" placeholder="From User Name"></ion-input>
+      </ion-item>
+
+    </div>
+    
+</ion-list>
+<ion-item-divider color="light">OR</ion-item-divider>
+<ion-list>
+  <button ion-item (click)="isDateFilterClick()" >
+    Date
+    <ion-icon color="success" item-right [name]="isDateFilter ? 'arrow-dropdown' : 'arrow-dropright'"></ion-icon>
+    </button>
+    <div *ngIf="isDateFilter">
+     <ion-item>
+  <ion-label>From Date</ion-label>
+  <ion-datetime displayFormat="MM/DD/YYYY" [(ngModel)]="fromDate"></ion-datetime>
+</ion-item>
+<ion-item>
+  <ion-label>To Date</ion-label>
+  <ion-datetime displayFormat="MM/DD/YYYY" [(ngModel)]="toDate"></ion-datetime>
+</ion-item>
+
+    </div>
+    
+</ion-list>
+  </ion-scroll>
+</ion-content>

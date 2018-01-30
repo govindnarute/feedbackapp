@@ -16,8 +16,19 @@ th{
 
 
 
+
 }
 ion-content::-webkit-scrollbar-thumb {
 background-color: darkgrey;
 outline: 1px solid red;
+}
+.ng2-opd-popup-content-main[_ngcontent-c0] {
+    position: absolute;
+    border-radius: 3px;
+   // background-color: white;
+    z-index: 999;
+    top: 10% !important;
+}
+.mt10{
+    margin-top: 10px;
 }
